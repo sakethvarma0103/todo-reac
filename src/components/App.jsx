@@ -12,9 +12,11 @@ function App() {
         <Form 
         items={items}
         setItems={setItems}/>
+        {items.map(x => (
         <List 
-        items={items}
+        item={x}
         />
+        ))}
     </div>
   );
 }

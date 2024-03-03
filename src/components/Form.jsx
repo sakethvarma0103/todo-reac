@@ -10,12 +10,19 @@ function Form(props)
         props.setItems([...props.items,inputText]);
         setInput("");
     }
+    function handlePress(event)
+    {
+        if (event.key === "Enter") {
+            handleSubmit(event);
+          }
+    }
     return (
         <div className="form">
         <input
           onChange={(e) => setInput(e.target.value)}
           type="text"
           value={inputText}
+          onKeyPress={handlePress}
         />
         <button onClick={handleSubmit}>
           <span>Add</span>
